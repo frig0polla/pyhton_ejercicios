@@ -1,7 +1,7 @@
 import Agenda
 
 if __name__ == '__main__':
-
+    agenda = Agenda.Agenda()
 
 
     print("1 - Guardar nuevo contacto")
@@ -11,14 +11,12 @@ if __name__ == '__main__':
     print("5 - Mostrar contactos")
     print("6 - Salir")
 
-    option = input()
+    option = int(input())
     agenda = Agenda.Agenda()
 
     match option:
         case 1:
+            agenda.guardar_contacto()
 
-        case 2:
 
-        case 3:
 
-        case 4:
