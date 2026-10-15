@@ -1,14 +1,14 @@
 <?xml version='1.0' encoding='utf-8'?>
 <Contactos>
   <contacto>
-    <nombre>xxxxx</nombre>
+    <nombre>x modificado</nombre>
     <apellidos>xxxxx</apellidos>
     <direccion>xxxxx</direccion>
     <telefono1>xxxx</telefono1>
     <telefono2 />
   </contacto>
   <contacto>
-    <nombre>bbbbbb</nombre>
+    <nombre>b modificadooooo</nombre>
     <apellidos>bbbbbb</apellidos>
     <direccion>bbbbb</direccion>
     <telefono1>bbb</telefono1>
@@ -16,14 +16,14 @@
   </contacto>
   <contacto>
     <nombre>zzzzz</nombre>
-    <apellidos>z</apellidos>
+    <apellidos>z modificadou</apellidos>
     <direccion>zzzzz</direccion>
     <telefono1>zzzz</telefono1>
     <telefono2 />
   </contacto>
   <contacto>
     <nombre>cansaado</nombre>
-    <apellidos>de esta</apellidos>
+    <apellidos>apellidos prime</apellidos>
     <direccion>su casa</direccion>
     <telefono1>practica</telefono1>
     <telefono2>no tinee </telefono2>
@@ -36,7 +36,7 @@
     <telefono2>joder</telefono2>
   </contacto>
   <contacto>
-    <nombre>sergio</nombre>
+    <nombre>teatas gordas</nombre>
     <apellidos>luna</apellidos>
     <direccion>carrer miquel grau</direccion>
     <telefono1>655607977</telefono1>

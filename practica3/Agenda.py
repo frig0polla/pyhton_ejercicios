@@ -102,4 +102,22 @@ class Agenda:
             case 0:
                 print("[!] - Elección no válida")
 
+        arbol = et.ElementTree(raiz)
+        et.indent(arbol)
+        arbol.write("agenda.xml", encoding="utf-8", xml_declaration=True)
 
+    def eliminar_contacto(self):
+        arbol = et.parse("agenda.xml")
+        raiz = arbol.getroot()
+        lista = raiz.findall('contacto')
+        lista_ordenada = sorted(lista, key=lambda c:
+                                c.find('nombre').text.lower())
+        for indice, i in enumerate(lista_ordenada):
+            print(indice, i.find('nombre').text, i.find('apellidos').text, i.find('direccion').text,
+                  i.find('telefono1').text, i.find('telefono2').text)
+        contacto_elegido = int(input("[!] - Selecciona un contacto a eliminar"))
+
+        raiz.remove(lista_ordenada[contacto_elegido])
+        arbol = et.ElementTree(raiz)
+        et.indent(arbol)
+        arbol.write("agenda.xml", encoding="utf-8", xml_declaration=True)

@@ -24,11 +24,9 @@ if __name__ == "__main__":
     |  [2] Crear nuevo contacto               |
     |  [3] Mostrar contactos ordenados        |
     |  [4] Modificar contacto                 |
-    |  [1] Consultar Directorio               |
-    |  [2] Añadir Nuevo Registro              |
-    |  [3] Editar / Eliminar Datos            |
-    |  [0] Salir                              |
-    |                                         |                                         
+    |  [5] Eliminar contacto de la agenda     |
+    |  [0] Salir de agenda                    |  
+    |                                         |                                     
     '-----------------------------------------'
     """)
 
@@ -48,10 +46,12 @@ if __name__ == "__main__":
             case "4":
                 print("\n[!] Abriendo modo edición...")
                 agenda.modificar_contacto()
-            case "0":
-                print("\nCerrando sistema AGENDA...")
+            case "5":
+                print("\nAbriendo modo eliminación...")
+                agenda.eliminar_contacto()
+            case "6":
+                print("[!] - Saliendo...")
                 break
-
             case _:
                 print("\n[-] Error: Opción no válida.")
 
