@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Contactos>
+  <contacto nombre="xxxxx" apellidos="xxxxx" direccion="xxxx" telefono1="" telefono2="xxxxx" />
+  <contacto nombre="bbbbbb" apellidos="bbbbbb" direccion="bbb" telefono1="" telefono2="bbbbb" />
+  <contacto nombre="zzzzz" apellidos="z" direccion="zzzz" telefono1="" telefono2="zzzzz" />
+  <contacto nombre="cansaado" apellidos="de esta" direccion="practica" telefono1="no tinee " telefono2="su casa" />
+  <contacto nombre="me ha salido" apellidos="de puta" direccion="madre" telefono1="joder" telefono2="odio python " />
+  <contacto nombre="sergioxml" apellidos="lunaxml" direccion="carrerxml" telefono1="655xml" telefono2=" " />
+</Contactos>
