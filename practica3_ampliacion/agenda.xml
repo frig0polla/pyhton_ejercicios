@@ -6,4 +6,5 @@
   <contacto nombre="cansaado" apellidos="de esta" direccion="practica" telefono1="no tinee " telefono2="su casa" />
   <contacto nombre="me ha salido" apellidos="de puta" direccion="madre" telefono1="joder" telefono2="odio python " />
   <contacto nombre="sergioxml" apellidos="lunaxml" direccion="carrerxml" telefono1="655xml" telefono2=" " />
+  <contacto nombre="atributos_modificados" apellidos="atributos" direccion="atributos" telefono1="atributos" telefono2=" " />
 </Contactos>

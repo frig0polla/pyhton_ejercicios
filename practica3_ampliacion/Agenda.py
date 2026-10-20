@@ -54,13 +54,63 @@ class Agenda:
         lista = raiz.findall('contacto')
         for c in lista:
             nombre = c.attrib.get('nombre')
-        lista_ordenada = sorted(lista, key=lambda p:p.get("nombre").lower)
-        print(lista_ordenada)
+        lista_ordenada = sorted(lista, key=lambda p:p.get("nombre").lower())
+        for c in lista_ordenada:
+            print(c.attrib)
 
-    '''/home/serlunrui/Documentos/react_native/pyhton_ejercicios/practica3_ampliacion/.venv/bin/python /home/serlunrui/Documentos/react_native/pyhton_ejercicios/practica3_ampliacion/main.py 
-Traceback (most recent call last):
-  File "/home/serlunrui/Documentos/react_native/pyhton_ejercicios/practica3_ampliacion/main.py", line 8, in <module>
-    agenda.mostrar_contacto()
-  File "/home/serlunrui/Documentos/react_native/pyhton_ejercicios/practica3_ampliacion/Agenda.py", line 57, in mostrar_contacto
-    lista_ordenada = sorted(lista, key=lambda p:p.get("nombre").lower)
-TypeError: '<' not supported between instances of 'builtin_function_or_method' and 'builtin_function_or_method''''
+    def modificar_contacto(self):
+        arbol = et.parse("agenda.xml")
+        raiz = arbol.getroot()
+        lista = raiz.findall('contacto')
+        for c in lista:
+            nombre = c.attrib.get('nombre')
+        lista_ordenada = sorted(lista, key=lambda p: p.get("nombre").lower())
+        for indice, i in enumerate(lista_ordenada):
+            print(indice, i.attrib)
+        eleccion = int(input("Selecciona el nombre del contacto: "))
+        contacto_elegido = lista_ordenada[eleccion]
+        print(f"""
+                    [1] - Nombre del contacto
+                                Nombre actual: {contacto_elegido.attrib.get('nombre')} 
+                    [2] - Apellidos del contacto
+                                Apellidos actuales: {contacto_elegido.attrib.get('apellidos')} 
+                    [3] - Direccion del contacto
+                                Dirección actual: {contacto_elegido.attrib.get('direccion')} 
+                    [4] - Telefono del contacto
+                                Telefono actual: {contacto_elegido.attrib.get('telefono1')} 
+                    [5] - Telefono Secundario 
+                                Telefono secundario actual: {contacto_elegido.attrib.get('telefono2')} 
+                    """)
+        opcion = int(input("Elige que quieres modificar: "))
+        match opcion:
+            case 1:
+                contacto_elegido.set('nombre', input("Escriba el nuevo nombre: "))
+            case 2:
+                contacto_elegido.set('apellidos', input("Escriba el apellidos: "))
+            case 3:
+                contacto_elegido.set('direccion', input("Seleccione la nueva direccion:"))
+            case 4:
+                contacto_elegido.set('telefono1', input("Escriba el nuevo telefono1: "))
+            case 5:
+                contacto_elegido.set('telefono2', input("Escriba el nuevo telefono2: "))
+            case 0:
+                print("[!] - Elección no válida")
+        arbol = et.ElementTree(raiz)
+        et.indent(arbol)
+        arbol.write("agenda.xml", encoding='utf-8', xml_declaration=True)
+
+    def eliminar_contacto(self):
+        arbol = et.parse("agenda.xml")
+        raiz = arbol.getroot()
+        lista = raiz.findall('contacto')
+        lista_ordenada = sorted(lista, key=lambda c:
+        c.find('nombre').text.lower())
+        for c in lista_ordenada:
+            print(c.attrib)
+        contacto_elegido = int(input("Elija el contacto a eliminar"))
+        raiz.remove(lista_ordenada[contacto_elegido])
+        arbol = et.ElementTree(raiz)
+        et.indent(arbol)
+        arbol.write("agenda.xml", encoding='utf-8', xml_declaration=True)
+
+

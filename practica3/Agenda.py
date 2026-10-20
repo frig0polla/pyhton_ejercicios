@@ -73,7 +73,7 @@ class Agenda:
         lista_ordeanada = sorted(lista, key=lambda c: c.find('nombre').text.lower())
         for indice, i in enumerate(lista_ordeanada):
             print(indice, i.find('nombre').text, i.find('apellidos').text,
-                  i.find('direccion').text,i.find('telefono1').text,i.find('telefono2').text)
+                i.find('direccion').text,i.find('telefono1').text,i.find('telefono2').text)
 
         eleccion = int(input("[!] - Selecciona un contacto a modificar"))
         contacto_elegido = lista_ordeanada[eleccion]
@@ -114,7 +114,7 @@ class Agenda:
                                 c.find('nombre').text.lower())
         for indice, i in enumerate(lista_ordenada):
             print(indice, i.find('nombre').text, i.find('apellidos').text, i.find('direccion').text,
-                  i.find('telefono1').text, i.find('telefono2').text)
+                i.find('telefono1').text, i.find('telefono2').text)
         contacto_elegido = int(input("[!] - Selecciona un contacto a eliminar"))
 
         raiz.remove(lista_ordenada[contacto_elegido])
